@@ -1,0 +1,17 @@
+// ========================
+// Images
+//=========================
+
+.img {
+  &--logo{
+    @include position;
+  }
+  &--avatar {
+    @include position;
+    width: 40%;
+  }
+  &--frame {
+    width: 100%;
+  }
+
+}

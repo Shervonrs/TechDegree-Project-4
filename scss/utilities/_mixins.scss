@@ -1,0 +1,17 @@
+// ========================
+// Mixins
+//=========================
+
+@mixin center {
+  margin: 0 auto;
+  width: 75%;
+};
+
+@mixin align {
+  text-align: center;
+};
+
+@mixin position {
+  display: block;
+  margin: auto;
+}
