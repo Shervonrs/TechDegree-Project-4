@@ -1,3 +1,42 @@
+.btn--info.theme__colors, .btn--warning.theme__colors, .btn--error.theme__colors, .btn--success.theme__colors, .btn--default.theme__colors {
+  display: flex;
+  width: 100%;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  font-size: 0.95em;
+  margin-top: 1em;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid;
+  border-width: 1px 1px 3px;
+  padding: 12px 40px;
+}
+
+.grid__col--8.theme__colors, .grid__col--7.theme__colors, .grid__col--5.theme__colors, .grid__col--3.theme__colors, .grid__col--4.theme__colors, .grid__col--6.theme__colors, .grid__col--12.theme__colors {
+  display: flex;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.5em;
+  border-radius: 5px;
+  padding: 12px 10px;
+}
+
+.nav__item {
+  margin-top: 6px;
+  margin: 6px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: 5px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 p {
   line-height: 1.5;
 }
@@ -369,6 +408,27 @@ ul {
   list-style: none;
 }
 
+.grid__col--12.theme__colors {
+  background-color: #80ffdf;
+}
+.grid__col--6.theme__colors {
+  background-color: #0077b3;
+}
+.grid__col--4.theme__colors {
+  background-color: #80e5ff;
+}
+.grid__col--3.theme__colors {
+  background-color: #e0b3ff;
+}
+.grid__col--5.theme__colors {
+  background-color: #79d279;
+}
+.grid__col--7.theme__colors {
+  background-color: #d27979;
+}
+.grid__col--8.theme__colors {
+  background-color: #ff944d;
+}
 .grid__row {
   padding: 1em 10px;
   display: flex;
@@ -506,10 +566,35 @@ ul {
   }
 }
 
+@media (min-width: 768px) {
+  .grid__col--12 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  .grid__col--12 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid__col--6 {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.grid__row {
+  display: flex;
+}
+
 .container {
   margin: 0 auto;
   width: 75%;
-  font-family: Helvetica, sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   color: #5c686c;
   font-size: 0.95em;
 }
@@ -521,10 +606,16 @@ ul {
 .blockquote {
   border-left: 0.3em solid #00cc99;
   border-radius: 4px;
-  padding-left: 1em;
+  padding-left: 1.5em;
   font-style: italic;
+  font-weight: lighter;
   font-size: 1.2em;
   margin-bottom: 2em;
+}
+@media (min-width: 768px) {
+  .blockquote {
+    font-size: 1.5em;
+  }
 }
 
 .headline--primary {
@@ -539,23 +630,89 @@ ul {
   color: #576366;
 }
 
+@media (min-width: 768px) {
+  .card > .headline--secondary {
+    margin-top: 0;
+  }
+}
+
 .nav {
   text-align: center;
-  color: #576366;
 }
-.nav__item {
-  margin-top: 6px;
-  margin: 6px;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  border-radius: 5px;
-  display: block;
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 .nav__item:hover {
   background: #00cc99;
 }
+.nav__item a {
+  display: block;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #576366;
+}
+@media (min-width: 768px) {
+  .nav__item a {
+    display: flex;
+  }
+}
+@media (min-width: 1000px) {
+  .nav__item a {
+    display: flex;
+    margin: 0 0.5em;
+  }
+}
 .nav__item a:hover {
   color: #fff;
+}
+
+.btn--default.theme__colors {
+  background-color: #80d4ff;
+  flex: 0;
+}
+.btn--success.theme__colors {
+  background-color: #00b386;
+  flex: 0;
+}
+.btn--error.theme__colors {
+  background-color: #ff8080;
+  flex: 0;
+}
+.btn--warning.theme__colors {
+  background-color: #ff884d;
+  flex: 0;
+}
+.btn--info.theme__colors {
+  background-color: #666699;
+  flex: 0;
+}
+
+.form__label--hidden {
+  display: none;
+}
+
+.form__input {
+  display: block;
+  margin-top: 2em;
+  padding: 0.5em;
+  border: none;
+  border-bottom: 0.4em solid #00cc99;
+  width: 100%;
+}
+.form__input:focus {
+  outline: none;
+  border-bottom: #00cc99;
+}
+
+@media (min-width: 1000px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+  }
 }
 
 .img--logo {
@@ -565,10 +722,19 @@ ul {
 .img--avatar {
   display: block;
   margin: auto;
-  width: 40%;
+  width: 50%;
+  margin-top: 1.5em;
+}
+@media (min-width: 768px) {
+  .img--avatar {
+    display: flex;
+    flex: 0;
+  }
 }
 .img--frame {
   width: 100%;
+  border: 2px solid #cccccc;
+  padding: 0.5em;
 }
 
 /*# sourceMappingURL=styles.css.map */

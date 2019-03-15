@@ -9,6 +9,8 @@
 
 // grid base class
 .grid {
+  //adds color to grid
+  @include themes ($themes);
 
   // .grid__row
   &__row {
@@ -17,7 +19,7 @@
     flex-direction: column;
 
     // NOTE: replace with media query mixin if aiming for exceeds
-    @media (min-width: 768px) {
+    @include mq ('m'){
       flex-direction: row;
     }
   }
@@ -33,14 +35,14 @@
       // selector would be .grid__col--1
       &--#{$i} {
 
-        // base styles applied to all grid columns 
+        // base styles applied to all grid columns
         // NOTE: could be converted to a placeholder, along with margin
         // from the  media query
         margin-top: 10px;
         flex-basis: 100%;
 
         // NOTE: replace with media query mixin if aiming for exceeds
-        @media (min-width: 768px) {
+        @include mq ('m') {
 
           // base stlyes applied to all grid columns
           margin-top: 0;
@@ -59,10 +61,44 @@
   & + & {
 
     // NOTE: replace with media query mixin if aiming for exceeds
-    @media (min-width: 768px) {
+    @include mq ('m') {
 
       // add grid gutter
       margin-left: 10px;
     }
   }
 }
+
+// turns div containing button into column or row
+//at Breakpoints
+.grid__col--12 {
+  @include mq('sm'){
+    @include flexwrap ($dir: column);
+  }
+  & {
+    @include mq('m'){
+    @include flexwrap ($dir: row, $wrap:wrap);
+  }
+
+  }
+}
+
+.grid__col--6 {
+  @include mq('m'){
+  @include flexwrap($just: center);
+  // margin-bottom: 1.5em;
+}
+}
+
+.grid__row{
+  display: flex;
+  
+}
+
+ // .grid__row{
+ //   @include flexwrap();
+ //
+ // }
+ //  .grid__col--8{
+ //    @include flexwrap($flex: 1);
+ //  }

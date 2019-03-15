@@ -12,18 +12,39 @@ $color-font-primary: #576366;
 $color-font-primary-light: lighten($color-font-primary, 2%);
 
 // font
-$font-stack-primary: Helvetica, sans-serif;
+$font-stack-primary: 'Helvetica Neue', sans-serif;
+
 //Button Colors
-$color-success: #00b386;
-$color-error: #ff8080;
-$color-warning: #ff884d;
-$color-info: #666699;
+$butcolor: (
+'default': $color-secondary,
+'success': #00b386,
+'error': #ff8080,
+'warning': #ff884d,
+'info': #666699,
+);
+
+//Layout
+$max-width: 1400px;
+
+//gutter
+$gutter: 1000px;
 
 //Grid Colors
-$color-g12: #80ffdf;
-$color-g6: #0077b3;
-$color-g4: #80e5ff;
-$color-g3: #e0b3ff;
-$color-g5: #79d279;
-$color-g7: #d27979;
-$color-g8: #ff944d;
+
+$themes: (
+'col--12': #80ffdf,
+'col--6': #0077b3,
+'col--4': #80e5ff,
+'col--3': #e0b3ff,
+'col--5': #79d279,
+'col--7': #d27979,
+'col--8': #ff944d,
+);
+
+
+//Breakpoints
+$breakpoints:(
+'sm': 768px,
+'m': 768px,
+'l': 1000px,
+);
